@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	
+	<head>
+		
+		<title>Twitbook</title>
+		
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		
+		<!--STYLES-->
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/styles/importer.css">
+		<link rel="stylesheet" href="/styles/mainLayout.css">
+		<!--STYLES END-->
+		
+		<!--SCRIPTS-->
+		<script src="/js/dependencies/sails.io.js"></script>
+		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="/bower_components/angular/angular.min.js"></script>
+		<script src="/bower_components/angular-route/angular-route.min.js"></script>
+		<!--SCRIPTS END-->
+		
+		<script src="/js/navbar/search.js"></script>
+
+	</head>
+
+	<body>	
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  	<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/home"><img id="logo" alt="Twitbook" title="Twitbook"src="/images/logo.jpg"/></a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><input id="searchBar" type="search" placeholder="Procurar por pessoas ou grupos"/></li>
+						<li><a href="#">
+							<input id="searchIcon" type="image" alt="Pesquisar" title="Pesquisar" src="/images/search.png" onclick="getSearchResults()"/>
+						</a></li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li><h1 id="profileNameLink"><a href="/Person/logOut">Sair</a></h1></li>
+					</ul>
+				</div>
+		  	</div>
+		</nav>	
+		
+		<div class="container">
+		  <div class="content">
+			<%- body %>
+		  </div>
+		</div>
+
+		<footer class="footer">
+		  <div class="container">
+				<p align="middle">Copyright &copy; 2016</p>
+				<p align="middle">Loys Henrique Saccomano Gibertoni, Nathan Henrique Imamura, Sady Sell Neto</p>
+		  </div>
+		</footer>	
+	</body>
+	
+</html>

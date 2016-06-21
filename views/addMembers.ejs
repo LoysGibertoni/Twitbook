@@ -1,0 +1,29 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/profile.css">
+<link rel="stylesheet" href="/styles/otherStyles/addMembers.css">
+<script src="/js/addMembers/search.js"></script>
+
+<div class="mainDiv" data-ng-app="addMembers" data-ng-controller="search" data-ng-init="init('<%= search %>', <%= group %>, <%= logged %>)">
+	<div id="asideContent" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<h2 id="resultsHeader">Exibindo resultados para:</h2>
+		<p id="searchText">{{search}}</p>
+	</div>
+	<div id="postsColumn" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<h2 class="members">Adicionar membros:</h2>
+		<div id="searchComment" class="row">
+			<input id="searchBarComment" type="search" placeholder="Procurar por usuários" data-ng-model="searchText"/>
+			<a href="/addMembers/{{group}}/{{searchText}}"><input id="searchIconComment" type="image" alt="Pesquisar" title="Pesquisar" src="/images/search.png"/></a>
+		</div>
+		<h2 class="members">Resultados:</h2>
+		<div class="row edit">
+			<div class="row member" data-ng-repeat="result in results track by $index">
+				<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+					<a href=""><p class="memberName">{{result.displayName}} ({{result.login}})</p></a>
+				</div>
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+					<a href=""><img class="addMember" alt="Adicionar membro" title="Adicionar membro" src="/images/add.png" data-ng-click="addPerson($index)"/><a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,17 @@
+#reportsHeader {
+ 	color: #337ab7;
+}
+
+.inputsLabel {
+  display: inline;
+  color: #337ab7;
+  margin-left: 10px;
+}
+.divsReports {
+  margin-top: 10px;
+  margin-bottom: 40px;
+}
+.formLabels {
+  color: #337ab7;
+  width: 60px;
+}

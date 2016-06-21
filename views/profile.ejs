@@ -1,0 +1,88 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/profile.css">
+<script src="/js/person/person.js"></script>
+<script src="/js/person/info.js"></script>
+<script src="/js/person/posts.js"></script>
+
+<div class="mainDiv" data-ng-app="profile">
+	<div id="asideContent" class="col-xs-3 col-sm-3 col-md-3 col-lg-3" data-ng-controller="info" data-ng-init="init('<%= person %>', <%= logged %>)">
+		<div id="imageContainer">
+			<img id="profilePicture" alt="Imagem de perfil" title="Imagem de perfil" src="/images/perfil.jpg" data-ng-hide="person.photo == null"/>
+		</div>
+		<h1 id="profileName" data-ng-hide="person.displayName == null">{{person.displayName}}</h1>
+		<h3 id="nickName">({{login}})</h3>
+		<h5 id="birthDay" data-ng-hide="person.birthDate == null">{{person.birthDate | date : "dd/MM/yyyy" : "+0000"}}</h5>
+		<p id="description" data-ng-hide="person.description == null">{{person.description}}</p>
+		<div id="follow">
+			<input type="button" value="{{following ? 'Deixar de seguir' : 'Seguir'}}" class="btn-primary roundedContainer confirmEditPost" data-ng-hide="isProfileOwner()" data-ng-click="followUnfollow()"/>
+			<p id="followers">Seguidores: {{follow.followers}}</p>
+			<p id="following">Seguindo: {{follow.following}}</p>
+		</div>
+		<div id="editDrop">
+			<a id="editInfo" href="/editProfile" data-ng-show="isProfileOwner()">Editar</a>
+			<br/>
+			<span id="dropUser" data-ng-show="isProfileOwner()" data-ng-click="removePerson()">Excluir-se</span>
+		</div>
+	</div>
+	<div id="postsColumn" class="col-xs-9 col-sm-9 col-md-9 col-lg-9" data-ng-controller="posts" data-ng-init="init('<%= person %>', <%= logged %>)">
+		<div id="posts" class="row">
+			<div class="postInfo row" data-ng-repeat="post in posts track by $index">
+				<div class="postTextContainer row">
+					<div class="row titleCreatorRow">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<input type="text" class="postTitle" data-ng-model="post.title" data-ng-readonly="editing != $index"/>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+							<a href="/profile/{{post.authorLogin}}"><h4 class="postCreator">
+								<span data-ng-hide="post.authorDisplayName == null">{{post.authorDisplayName}} </span>({{post.authorLogin}})
+							</h4></a>
+						</div>
+					</div>
+					<div class="row editRemoveContainer">
+						<p class="pseudoLink editPost" data-ng-click="editContent($index)" data-ng-show="isProfileOwner() && !post.repost">Editar</p>
+						<p class="pseudoLink removePost" data-ng-click="removeContent($index)" data-ng-show="isProfileOwner()">Remover</p>
+					</div>
+					<p class="postText" data-ng-hide="editing == $index" data-ng-bind-html="parse(post.content)"></p>				<!--Troca esse pelo de baixo se estiver editando-->
+					<textarea class="postText" data-ng-hide="editing != $index" data-ng-model="post.content"></textarea>
+          <p class="postedAt">{{post.postedAt | date : "dd/MM/yyyy, HH:mm"}}</p>
+					<a href=""><input type="button" value="Confirmar" class="btn-primary roundedContainer confirmEditPost" data-ng-click="confirmChanges()" data-ng-hide="editing != $index"/></a>
+					<a href=""><input type="button" value="Cancelar" class="btn-primary roundedContainer confirmEditPost" data-ng-click="cancelChanges()" data-ng-hide="editing != $index"/></a>
+				</div>
+				<div class="postButtonsContainer row">
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						<input type="image" class="buttonsPost" alt="Gostei" title="Gostei" src="/images/like.png" data-ng-click="likeContent($index)"/>
+						<p class="nLikesUnlikes">{{post.likes}}</p>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						<input type="image" class="buttonsPost" alt="Não gostei" title="Não gostei" src="/images/unlike.png" data-ng-click="unlikeContent($index)"/>
+						<p class="nLikesUnlikes">{{post.unlikes}}</p>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						<input type="image" class="buttonsPost" alt="Comentar" title="Comentar" src="/images/comment.png"/>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						<input type="image" class="buttonsPost" alt="Compartilhar" title="Compartilhar" src="/images/share.png" data-ng-click="repostContent($index)"/>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols"></div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						Comentários:
+					</div>
+				</div>
+				<div class="row commentsRow">
+					<div class="row newCommentBox">
+						<textarea class="newCommentText" maxlength="255" data-ng-model="post.buffer"></textarea>
+						<input type="button" value="Comentar" class="btn-primary roundedContainer confirmComment" data-ng-click="newComment($index)"/>
+					</div>
+					<div class="row commentsBox" data-ng-init="getComments($index)">
+						<div class="row comment" data-ng-repeat="comment in post.comments track by $index">
+							<a href="/profile/{{comment.authorLogin}}"><h4 class="commentAuthor">
+								<span data-ng-hide="post.authorDisplayName == null">{{comment.authorDisplayName}} </span>({{comment.authorLogin}})
+							</h4></a>
+							<p class="commentText">{{comment.description}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

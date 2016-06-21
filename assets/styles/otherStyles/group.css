@@ -1,0 +1,21 @@
+#groupName {
+	text-align: center;
+	color: #337ab7;
+	font-size: 32pt;
+	font-weight: bold;
+}
+#group {
+	text-align: center;
+	color: #337ab7;
+	margin-top: 0;
+	margin-bottom: 35%;
+}
+#membersHeader {
+	margin-top: 25%;
+	text-align: center;
+	color: #337ab7;
+}
+#members {
+	text-align: left;
+	color: #337ab7;
+}

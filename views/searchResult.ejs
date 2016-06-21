@@ -1,0 +1,22 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/profile.css">
+<link rel="stylesheet" href="/styles/otherStyles/searchResult.css">
+<script src="/js/search/results.js"></script>
+
+<div class="mainDiv" data-ng-app="search" data-ng-controller="results" data-ng-init="init('<%= filter %>', <%= logged %>)">
+	<div id="asideContent" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<h2 id="resultsHeader">Exibindo resultados para:</h2>
+		<p id="searchText">{{filter}}</p>
+	</div>
+	<div id="postsColumn" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<h2 class="resultsHeader2">Resultados:</h2>
+		<div class="row edit">
+			<div class="row member" data-ng-repeat="result in personResults">
+				<a href="/profile/{{result.login}}"><p class="memberName">{{result.displayName}} ({{result.login}})</p></a>
+			</div>
+			<div class="row member" data-ng-repeat="result in groupResults">
+				<a href="/group/{{result.id}}"><p class="memberName">{{result.name}} ({{result.owner}}) (Grupo)</p></a>
+			</div>
+		</div>
+	</div>
+</div>

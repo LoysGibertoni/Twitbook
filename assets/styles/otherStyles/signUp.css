@@ -1,0 +1,16 @@
+h1 {
+	text-align: center;
+	margin-bottom: 2vh;
+	color: rgb(150, 178, 206);
+}
+.Absolute-Center {
+  top: 35vh;
+}
+
+fieldset > div {
+	margin-bottom: 1.2vh;
+}
+
+#passwordOnly {
+	margin-bottom: 0.25vh;
+}

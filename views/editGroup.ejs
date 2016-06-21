@@ -1,0 +1,29 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/profile.css">
+<link rel="stylesheet" href="/styles/otherStyles/editGroup.css">
+<script src="/js/editGroup/group.js"></script>
+
+<div class="mainDiv" data-ng-app="editGroup" data-ng-controller="group" data-ng-init="init(<%= group %>, <%= logged %>)">
+	<div id="asideContent" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<h1 id="groupName">{{group.name}}</h1>
+		<h2 id="group">(grupo)</h2>
+	</div>
+	<div id="postsColumn" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<h2 class="members">Adicionar membros:</h2>
+		<div id="searchComment" class="row">
+			<input id="searchBarComment" type="search" placeholder="Procurar por usuários" data-ng-model="searchText"/>
+			<a href="/addMembers/{{group.id}}/{{searchText}}"><input id="searchIconComment" type="image" alt="Pesquisar" title="Pesquisar" src="/images/search.png"/></a>
+		</div>
+		<h2 class="members">Membros:</h2>
+		<div class="row edit">
+			<div class="row member" data-ng-repeat="member in group.members track by $index">
+				<div class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
+					<a href=""><p class="memberName">{{member.displayName}} ({{member.login}})</p></a>
+				</div>
+				<div class="col-xs-1 col-sm-1 col-md-1 col-lg-1">
+					<a href=""><img class="removeMember" alt="Remover usuário do grupo" title="Remover usuário do grupo" src="/images/remove.png" data-ng-click="removePerson($index)" data-ng-hide="member.id === group.owner"/><a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

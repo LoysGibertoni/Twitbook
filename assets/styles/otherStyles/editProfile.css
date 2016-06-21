@@ -1,0 +1,85 @@
+label, input {
+	font-size: 1.2em;
+}
+#editH1 {
+	padding-left: 15px;
+	margin-bottom: 4vh;
+	color: rgb(150, 178, 206);
+}
+
+#asideContent {
+	border-width: 3px;
+	border-color: rgb(150, 178, 206);
+	border-right-style: solid;
+	background-color: rgb(255, 236, 179);
+	height: 100%;
+	padding: 5%;
+}
+#imageContainer {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	margin-bottom: 5%;	
+}
+#profilePicture {
+	display: block;
+	border-width: 6px;
+	border-color: rgb(150, 178, 206);
+	border-style: double;
+	width: 100%;
+}
+#editProfilePicture {
+	border: solid 2px black;
+	position: absolute;
+	right: 6px;
+	bottom: 6px;
+	width: 40px;
+	height: 40px;
+}
+
+#editInfoColumn {
+	padding-right: 5vw;
+	padding-left: 5vw;
+	padding-top: 5vh;
+	padding-bottom: 5vh;
+}
+/*#labelsCols {
+	
+}
+#inputCols {
+	
+}*/
+fieldset {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+fieldset p {
+	margin: 4px;
+	padding: 0;
+	border-width: 0;
+}
+label[for="birthday"] {
+	margin-top: 67px;
+}
+form label, form input {
+	margin-top: 0;
+	margin-bottom: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+	width: 100%;
+}
+#description {
+	height: 100px;
+	width: 100%;
+	margin-bottom: 10px;
+  	overflow-y: auto;
+	text-align: justify;
+	resize: none;
+}
+#birthday {
+	width: auto;
+}
+#confirm, #cancel {
+	margin-top: 15px;
+	width: 100px;
+}

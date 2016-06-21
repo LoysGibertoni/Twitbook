@@ -1,0 +1,116 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/profile.css">
+<link rel="stylesheet" href="/styles/otherStyles/reportsResults.css">
+
+<div class="mainDiv" data-data-ng-app="profile">
+	<div id="asideContent" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<h1 id="reportsHeader">Resultados de Relatórios</h1>
+	</div>
+	<div id="postsColumn" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+    
+		<div id="divTop20U" class="row reportInfo" data-ng-hide="">
+      <h2 class="reportLabel">Influência dos top 20 usuários</h2>
+      <div class="row usersShownDiv" data-ng-repeat="">
+        <a class="userShown" href="">Nathan (natsxd)</a>
+      </div>
+    </div>
+    
+		<div id="divTop3U" class="row reportInfo" data-ng-hide="">
+      <h2 class="reportLabel">Variação de influência dos top 3 usuários</h2>
+      <table id="userInflTable">
+        <thead>
+          <tr>
+            <th></th>
+            <th data-ng-repeat="">19/06 16:00</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Usuário 1</th>
+            <td data-ng-repeat="">3</td>
+          </tr>
+          <tr>
+            <th>Usuário 2</th>
+            <td data-ng-repeat="">2</td>
+          </tr>
+          <tr>
+            <th>Usuário 3</th>
+            <td data-ng-repeat="">5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+		<div id="divTop20P" class="row reportInfo" data-ng-hide="">
+      <h2 class="reportLabel">Top 20 publicações</h2>
+      <div class="postInfo row" data-ng-repeat="post in posts track by $index">
+				<div class="postTextContainer row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<h3 class="postTitle">{{post.title}}</h3>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+						<a href="/profile/{{post.authorLogin}}"><h4 class="postCreator">{{post.authorDisplayName}} ({{post.authorLogin}})</h4></a>
+					</div>
+					<textarea class="postText">{{post.content}}</textarea>
+					<p class="postedAt">{{post.postedAt | date : "dd/MM/yyyy, HH:mm"}}</p>
+				</div>
+				<div class="postButtonsContainer row">
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						<input type="image" class="buttonsPost" alt="Gostei" title="Gostei" src="/images/like.png" data-ng-click="likeContent($index)"/>
+						<p class="nLikesUnlikes">{{post.likes}}</p>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						<input type="image" class="buttonsPost" alt="Não gostei" title="Não gostei" src="/images/unlike.png" data-ng-click="unlikeContent($index)"/>
+						<p class="nLikesUnlikes">{{post.unlikes}}</p>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						<input type="image" class="buttonsPost" alt="Comentar" title="Comentar" src="/images/comment.png"/>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						<input type="image" class="buttonsPost" alt="Compartilhar" title="Compartilhar" src="/images/share.png"/>
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols"></div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 buttonCols">
+						Comentários:
+					</div>
+				</div>
+				<div class="row commentsRow">
+					<div class="row newCommentBox">
+						<textarea class="newCommentText" maxlength="255" data-ng-model="post.buffer"></textarea>
+						<input type="button" value="Comentar" class="btn-primary roundedContainer confirmComment" data-ng-click="newComment($index)"/>
+					</div>
+					<div class="row commentsBox" data-ng-init="getComments($index)">
+						<div class="row comment" data-ng-repeat="comment in post.comments track by $index">
+							<a href="/profile/{{comment.authorLogin}}"><h4 class="commentAuthor">
+								<span data-ng-hide="post.authorDisplayName == null">{{comment.authorDisplayName}} </span>({{comment.authorLogin}})
+							</h4></a>
+							<p class="commentText">{{comment.description}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+    </div>
+    
+		<div id="divUserInfl" class="row reportInfo" data-ng-hide="">
+      <h2 class="reportLabel">Influência de usuário</h2>
+      <p class="userLikeLabel">Usuário pesquisado: </p>
+      <a class="userSearched" href="">Nathan (natsxd)</a>
+      <br/>
+      <p class="userLikeLabel">Influência: </p>
+      <p id="userInfl">3<p>
+    </div>
+    
+		<div id="divUserLikeUser" class="row reportInfo" data-ng-hide="">
+      <h2 class="reportLabel">Top 10 similares a usuário</h2>
+      <p class="userLikeLabel">Usuário pesquisado: </p>
+      <a class="userSearched" href="">Nathan (natsxd)</a>
+      <br/>
+      <p class="userLikeLabel">Usuários semelhantes: </p>
+      <div class="row usersShownDiv" data-ng-repeat="">
+        <a class="userShown" href="">Ninguém (none)</a>
+      </div>
+    </div>
+    
+    <a href="reports"><input type="button" class="btn-primary roundedContainer" value="Voltar"/></a>
+	</div>
+</div>

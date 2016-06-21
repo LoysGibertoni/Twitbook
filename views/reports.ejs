@@ -1,0 +1,59 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/profile.css">
+<link rel="stylesheet" href="/styles/otherStyles/reports.css">
+
+<div class="mainDiv" data-ng-app="profile">
+	<div id="asideContent" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<h1 id="reportsHeader">Relatórios</h1>
+	</div>
+	<div id="postsColumn" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<form id="reportsForm" role="form" action="reportsResults" method="post">
+      <input type="checkbox" name="top20U" data-ng-disabled=""><p class="inputsLabel">Influência dos top 20 usuários</p></input>
+      <div class="divsReports">
+        <label for="top20UBeginD" class="formLabels">Início:</label>
+        <input type="date" name="top20UBeginD" id="top20UBeginD"></input>
+        <input type="time" name="top20UBeginT" id="top20UBeginT"></input>
+        <br/>
+        <label for="top20UEndD" class="formLabels">Fim:</label>
+        <input type="date" name="top20UEndD" id="top20UEndD"></input>
+        <input type="time" name="top20UEndT" id="top20UEndT"></input>
+      </div>
+      
+      <input type="checkbox" name="top3U" data-ng-disabled=""><p class="inputsLabel">Variação de influência dos top 3 usuários</p></input> 
+      <div class="divsReports">
+        <label for="top3UBeginD" class="formLabels">Início:</label>
+        <input type="date" name="top3UBeginD" id="top3UBeginD"></input>
+        <input type="time" name="top3UBeginT" id="top3UBeginT"></input>
+        <br/>
+        <label for="top3UEndD" class="formLabels">Fim:</label>
+        <input type="date" name="top3UEndD" id="top3UEndD"></input>
+        <input type="time" name="top3UEndT" id="top3UEndT"></input>
+      </div>
+      
+      <input type="checkbox" name="top20P" data-ng-disabled=""><p class="inputsLabel">Top 20 publicações</p></input> 
+      <div class="divsReports">
+        <label for="top20PBeginD" class="formLabels">Início:</label>
+        <input type="date" name="top20PBeginD" id="top20PBeginD"></input>
+        <input type="time" name="top20PBeginT" id="top20PBeginT"></input>
+        <br/>
+        <label for="top20PEndD" class="formLabels">Fim:</label>
+        <input type="date" name="top20PEndD" id="top20PEndD"></input>
+        <input type="time" name="top20PEndT" id="top20PEndT"></input>
+      </div>
+      
+      <input type="checkbox" name="userInfl" data-ng-disabled=""><p class="inputsLabel">Influência de usuário</p></input> 
+      <div class="divsReports">
+        <label for="userInflName" class="formLabels">Usuário:</label>
+        <input type="text" name="userInflName" id="userInflName"></input>
+      </div>
+      
+      <input type="checkbox" name="userLikeUser" data-ng-disabled=""><p class="inputsLabel">Top 10 similares a usuário</p></input> 
+      <div class="divsReports">
+        <label for="userLikelName" class="formLabels">Usuário:</label>
+        <input type="text" name="userLikelName" id="userLikelName"></input>
+      </div>
+      
+      <input type="submit" value="Exibir relatórios" class="btn-primary roundedContainer"/>
+    </form>
+	</div>
+</div>

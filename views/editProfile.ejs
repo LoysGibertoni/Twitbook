@@ -1,0 +1,43 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/editProfile.css">
+<script src="/js/edit_profile/info.js"></script>
+
+<div class="mainDiv" data-ng-app="editProfile">
+	<div id="asideContent" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<div id="imageContainer" data-ng-hide="person.photo == null">
+			<img id="profilePicture" alt="Imagem de perfil" title="Imagem de perfil" src="/images/perfil.jpg"/>
+			<input id="editProfilePicture" type="image" alt="Editar imagem de perfil" title="Editar imagem de perfil" src="/images/edit.png"/>
+		</div>
+	</div>
+	<div id="editInfoColumn" class="col-xs-9 col-sm-9 col-md-9 col-lg-9" data-ng-controller="editInfo" data-ng-init="init(<%= logged %>)">
+		<form action="/Person/updateProfile" method="post">
+			<h1 id="editH1">Editar informações</h1>
+			<div id="labelsCols" class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+				<p><label for="login">Login</label></p>
+				<fieldset>
+					<p><label for="oldPassword">Senha antiga</label></p>
+					<p><label for="newPassword">Nova senha</label></p>
+					<p><label for="confirmPassword">Confirmar senha</label></p>
+				</fieldset>
+				<p><label for="name">Nome</label></p>
+				<p><label for="description">Descrição</label></p>
+				<p><label for="birthday">Aniversário</label></p>
+			</div>
+			<div id="inputCols" class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+				<input id="login" name="login" type="text" readonly data-ng-value="logged.login"/>
+				<fieldset>
+					<input id="oldPassword" name="oldp" type="password" placeholder="Senha antiga" maxlength="30" data-ng-model="editingPassword.current"/>
+					<input id="newPassword" name="newp" type="password" placeholder="Nova senha" maxlength="30" data-ng-model="editingPassword.update"/>
+					<input id="confirmPassword" name="confirmp" type="password" placeholder="Confirmar senha" maxlength="30" data-ng-model="editingPassword.confirm"/>
+				</fieldset>
+				<input id="name" name="display" type="text" placeholder="Nome de exibição" maxlength="30" data-ng-model="logged.displayName"/>
+				<textarea id="description" name="description" rows="5" placeholder="Sua descrição" maxlength="128" data-ng-model="logged.description"></textarea>
+				<input id="birthday" name="bdate" type="date" data-ng-model="logged.birthDate" data-ng-model-options="{timezone : '+0000'}"/>
+			</div>
+			<input id="confirm" type="submit" class="btn-success roundedContainer" value="Confirmar"/>
+			<a href="/Person/goHome">
+				<input id="cancel" type="button" class="btn-danger roundedContainer" value="Cancelar"/>
+			</a>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,59 @@
+#resultsHeader {
+	text-align: left;
+	color: #337ab7;
+	font-size: 20pt;
+	font-weight: bold;
+}
+#searchText {
+	text-align: left;
+	color: #337ab7;
+	margin-top: 20px;
+	margin-bottom: 35%;
+}
+
+.members {
+	color: #337ab7;
+	
+}
+#searchComment {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+}
+#searchBarComment {
+	width: 100%;
+	margin-right: 10px;
+}
+#searchIconComment {
+	height: 20px;
+}
+
+.edit {
+	height: auto;
+	width: 100%;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-width: 2px;
+	border-color: rgb(150, 178, 206);
+	border-style: solid;
+}
+.member {
+	height: 30px;
+	width: 100%;
+	border-width: 2px;
+	margin-left: 0;
+	border-color: rgb(150, 178, 206);
+	border-style: solid;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.memberName {
+	font-size: 14pt;
+}
+.addMember {
+	margin-top: 3px;
+	height: 20px;
+}

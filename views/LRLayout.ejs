@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	
+	<head>
+		
+		<title>Twitbook</title>
+		
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+		
+		<!--STYLES-->
+		<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="/styles/importer.css">
+		<link rel="stylesheet" href="/styles/mainLayout.css">
+		<!--STYLES END-->
+		
+		<!--SCRIPTS-->
+		<script src="/js/dependencies/sails.io.js"></script>
+		<script src="/bower_components/jquery/dist/jquery.min.js"></script>
+		<script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="/bower_components/angular/angular.min.js"></script>
+		<script src="/bower_components/angular-route/angular-route.min.js"></script>
+		<!--SCRIPTS END-->
+		
+	</head>
+
+	<body ng-app="twitbookApp">			
+		<nav class="navbar navbar-default navbar-fixed-top">
+		  	<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<img id="logo" alt="Twitbook" title="Twitbook" src="/images/logo.jpg"/>
+				</div>
+		  	</div>
+		</nav>	
+		
+		<div class="container">
+		  <div class="content">
+			<%- body %>
+		  </div>
+		</div>
+
+		<footer class="footer">
+		  <div class="container">
+				<p align="middle">Copyright &copy; 2016</p>
+				<p align="middle">Loys Henrique Saccomano Gibertoni, Nathan Henrique Imamura, Sady Sell Neto
+		  </div>
+		</footer>	
+	</body>
+	
+</html>

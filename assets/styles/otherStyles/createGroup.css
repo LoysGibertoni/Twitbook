@@ -1,0 +1,21 @@
+#asideHeader {
+	text-align: left;
+	color: #337ab7;
+	font-size: 20pt;
+	font-weight: bold;
+}
+
+#groupNameLabel {
+	color: #337ab7;
+}
+#confirm, #cancel {
+	margin-top: 15px;
+	width: 100px;
+}
+form input {
+	margin-top: 0;
+	margin-bottom: 10px;
+	padding-top: 0;
+	padding-bottom: 0;
+	width: 100%;
+}

@@ -1,0 +1,283 @@
+#asideContent {
+	border-width: 3px;
+	border-color: rgb(150, 178, 206);
+	border-right-style: solid;
+	background-color: rgb(255, 236, 179);
+	padding: 5%;
+	flex: 1;
+}
+#imageContainer {
+	display: inline-block;
+	position: relative;
+	width: 100%;
+	margin-bottom: 5%;	
+}
+#profilePicture {
+	display: block;
+	border-width: 6px;
+	border-color: rgb(150, 178, 206);
+	border-style: double;
+	width: 100%;
+}
+#editProfilePicture {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+	width: 40px;
+	height: 40px;
+}
+#profileName {
+	text-align: center;
+	color: #337ab7;
+	margin-bottom: 5px;
+}
+#nickName {
+	margin-top: 5px;
+	text-align: center;
+	color: #337ab7;
+}
+#birthDay {
+	text-align: center;
+	color: #337ab7;
+}
+#description {
+	margin-top: 25%;
+	text-align: center;
+	color: #337ab7;
+}
+#follow {
+	padding: 0;
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+	height: auto; 
+	color: #337ab7;
+}
+#followers, #following {
+	margin-bottom: 0;
+}
+#editDrop {
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+#editInfo, #dropUser {
+	color: #337ab7;
+}
+#dropUser:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#postsColumn {
+	padding-right: 5vw;
+	padding-left: 5vw;
+	padding-top: 5vh;
+	padding-bottom: 5vh;
+	flex: 4;
+}
+#posts {
+	height: auto;
+	width: 100%;
+	padding-right: 10px;
+	padding-left: 10px;
+	border-width: 2px;
+	border-color: rgb(150, 178, 206);
+	border-style: solid;
+}
+
+.writePostContainer {
+	height: 230px;
+	width: 100%;
+	border-width: 2px;
+	margin-left: 0;
+	border-color: rgb(150, 178, 206);
+	border-style: solid;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.labelNewPostRow {
+	margin-left: 0;	
+}
+.labelNewPost {
+	color: #337ab7;
+	margin-top: 0;
+	margin-bottom: 10px;
+	text-align: left;
+}
+.writePostTitleRow {
+	width: 100%;
+	margin-left: 0;
+	margin-bottom: 0;
+}
+.inputPostTitle {
+	width: 100%;
+	border-bottom-width: 0;
+}
+.writePostRow {
+	width: 100%;
+	height: 130px;
+	margin-left: 0;
+	margin-top: 0;	
+  	overflow-y: auto;
+}
+.inputPost {
+	width: 100%;
+	height: 90%;
+	resize: none;
+	border-top-width: 0;	
+}
+.postPost {
+	margin-left: 10px;
+}
+
+.postInfo {
+	height: auto;
+	width: 100%;
+	border-width: 2px;
+	margin-left: 0;
+	border-color: rgb(150, 178, 206);
+	border-style: solid;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.postTextContainer {
+	height: auto;
+	width: 100%;
+	margin-left: 0;
+	margin-bottom: 0;
+	padding: 5px;
+	padding-bottom: 0;
+  overflow-y: auto;
+}
+.titleCreatorRow {
+	width: 100%;
+}
+.postTitle {
+	color: #337ab7;
+	margin-top: 0;
+	font-size: 14pt;
+	text-align: left;
+	padding: 0;
+	border-width: 0;
+}
+.creatorCol {
+	padding-right: 0;
+}
+.postCreator {
+	color: #777777;
+	margin-top: 0;
+	text-align: right;
+	font-size: 12pt;
+}
+.editRemoveContainer {
+	width: 100%;
+	margin-bottom: 10px;
+	margin-left: 0;
+}
+.editPost {
+	color: #337ab7;
+	text-align: right;
+	font-size: 8pt;
+	display: inline;
+}
+.removePost {
+	color: #337ab7;
+	text-align: right;
+	font-size: 8pt;	
+	display: inline;
+}
+.postText {
+	text-align: justify;
+	width: 100%;
+	height: 100px;
+	resize: none;
+	border-width: 0;
+}
+.postedAt {
+	text-align: right;
+	margin-top: 5px;
+	margin-bottom: 0;
+	color: #337ab7;
+	font-size: 8pt;	
+}
+.confirmEditPost {
+	margin-left: 5px;
+	margin-top: 15px;
+	margin-bottom: 10px;
+}
+.postButtonsContainer {
+	height: 30px;
+	width: 100%;
+	margin-left: 0;
+}
+.buttonCols {
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.buttonsPost {
+	height: 70%;
+}
+.nLikesUnlikes {
+	margin-top: 10px;
+	margin-left: 5px;
+}
+.seeComments {
+	color: black;
+	font-weight: bold;
+	text-align: right;
+}
+.commentsRow {
+	height: auto;
+	width: 100%;
+	margin-left: 0;
+	margin-bottom: 10px;
+	padding: 5px;
+	padding-bottom: 0;
+}
+.newCommentBox {
+	width: 100%;
+	height: 140px;
+	margin-left: 0;
+	margin-top: 0;	
+  	overflow-y: auto;
+}
+.newCommentText {
+	width: 100%;
+	height: 90px;
+	resize: none;
+  	overflow-y: auto;
+}
+.confirmComment {
+	margin-left: 5px;
+	margin-top: 15px;
+}
+.commentsBox {
+	height: auto;
+	width: 100%;
+	border-width: 2px;
+	margin-left: 0;
+	border-color: rgb(150, 178, 206);
+	border-style: solid;
+	margin-top: 10px;
+	padding: 5px;
+}
+.comment {
+	margin-left: 0;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.commentAuthor {
+	color: #777777;
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 12pt;
+}
+.commentText {
+	text-align: justify;
+	width: 100%;
+	height: auto;
+	margin-bottom: 0;
+}

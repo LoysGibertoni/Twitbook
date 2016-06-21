@@ -1,0 +1,45 @@
+h2 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+#reportsHeader {
+  color: #337ab7;
+}
+.reportInfo {
+	border-width: 2px;
+	border-color: rgb(150, 178, 206);
+	border-style: solid;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+.reportLabel {
+  color: #337ab7;
+}
+.usersShownDiv {
+  margin-bottom: 5px;
+}
+.userShown {
+  margin-left: 30px;
+  color: #337ab7;
+}
+
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 10px;
+}
+
+.userSearched {
+  color: #337ab7;
+}
+#userInfl {
+  display: inline;
+  color: #337ab7;
+}
+
+.userLikeLabel {
+  display: inline;
+}

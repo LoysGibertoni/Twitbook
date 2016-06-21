@@ -1,0 +1,41 @@
+{
+  "name": "twitbook",
+  "description": "Twitbook - Rudinei's Tweeter and Facebook",
+  "main": "",
+  "keywords": [
+    "twitbook",
+    "facebook",
+    "twitter",
+    "googleplus",
+    "google+",
+    "rudinei",
+    "paulo",
+    "oliveiraph17",
+    "loys",
+    "nathan",
+    "sady",
+    "social",
+    "network"
+  ],
+  "authors": [
+    "Loys Henrique Sacomano Gibertoni",
+    "Nathan Henrique Imamura",
+    "Sady Sell Neto"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+	  "angular": "*",
+	  "angular-route": "*",
+	  "bootstrap": "*",
+	  "jquery": "*"
+  }
+}

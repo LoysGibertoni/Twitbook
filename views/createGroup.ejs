@@ -1,0 +1,23 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/profile.css">
+<link rel="stylesheet" href="/styles/otherStyles/createGroup.css">
+
+<div class="mainDiv">
+	<div id="asideContent" class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+		<h2 id="asideHeader">Você está criando um grupo</h2>
+	</div>
+	<div id="postsColumn" class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+		<h2 id="groupNameLabel">Nome do grupo:</h2>
+		<form action="community/create" method="post">
+			<div class="row">
+				<input id="name" type="text" name="name" placeholder="Novo Grupo" maxlength="16"/>
+			</div>
+			<div class="row">
+				<input id="confirm" type="submit" class="btn-success roundedContainer" value="Confirmar"/>
+				<a href="home">
+					<input id="cancel" type="button" class="btn-danger roundedContainer" value="Cancelar"/>
+				</a>
+			</div>
+		</form>
+	</div>
+</div>

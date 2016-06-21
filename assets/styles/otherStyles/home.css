@@ -1,0 +1,44 @@
+#homeHeader {
+	text-align: center;
+	color: #337ab7;
+	font-size: 32pt;
+	font-weight: bold;
+}
+#groupsContainer {
+  position: absolute;
+	bottom: 130px;
+	height: auto;
+}
+#groupsHeader {
+	color: #337ab7;
+	margin-bottom: 5px;
+}
+#createGroup {
+	margin-top: 15px;
+}
+.groups {
+	text-align: left;
+	color: #337ab7;
+}
+
+#reportLink {
+	position: absolute;
+	bottom:30px;
+}
+#reportLabel {
+	color: #337ab7;
+}
+
+#searchComment {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 15px;
+}
+#searchBarComment {
+	width: 100%;
+	margin-right: 10px;
+}
+#searchIconComment {
+	height: 20px;
+}

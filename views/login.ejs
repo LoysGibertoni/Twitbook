@@ -1,0 +1,29 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/login.css">
+
+<section>
+	<div class="row Absolute-Center">
+		<form role="form" action="person/login" method="post">
+			<fieldset>
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 labels">
+						<label for="login">Usuário:</label>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 inputs">
+						<input id="login" type="text" name="login" placeholder="Login" maxlength="20" autofocus/>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 labels">
+						<label for="password">Senha:</label>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 inputs">
+						<input id="password" type="password" name="password" placeholder="Senha" maxlength="30"/>
+					</div>	
+				</div>
+				<input type="submit" value="Login" class="btn-primary roundedContainer"/>
+				<a href="/signUp"><input type="button" value="Cadastrar-se" class="btn-default roundedContainer"/></a>
+			</fieldset>
+		</form>
+	</div>
+</section>

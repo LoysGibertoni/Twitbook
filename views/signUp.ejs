@@ -1,0 +1,40 @@
+<!--STYLES SPECIFIC TO THIS LAYOUT-->
+<link rel="stylesheet" href="/styles/otherStyles/login.css">
+<link rel="stylesheet" href="/styles/otherStyles/signUp.css">
+
+<section>
+	<div class="row Absolute-Center">
+		<h1>Cadastrar-se</h1>
+		<form role="form" action="/person/signUp" method="post">
+			<fieldset>
+				<div class="row">
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 labels">
+						<label for="login">Usuário:</label>
+					</div>
+					<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 inputs">
+						<input id="login" type="text" name="login" placeholder="Login" maxlength="20" autofocus/>
+					</div>
+				</div>
+				<fieldset>
+					<div id="passwordOnly" class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 labels">
+							<label for="password">Senha:</label>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 inputs">
+							<input id="password" type="password" name="password" placeholder="Senha" maxlength="30"/>
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 labels">
+							<label for="confirmPassword">Confirmar senha:</label>
+						</div>
+						<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 inputs">
+							<input id="confirmPassword" type="password" name="confirmPassword" placeholder="Confirmar senha" maxlength="30"/>
+						</div>	
+					</div>
+				</fieldset>
+				<input type="submit" value="Cadastrar-se" class="btn-primary roundedContainer"/>
+			</fieldset>
+		</form>
+	</div>
+</section>
